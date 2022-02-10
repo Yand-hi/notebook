@@ -11,3 +11,20 @@
 - Vue 中为 `render` 函数中的 `h` 函数；一般在 template 标签中写，通过 `vue-loader` 转译；
 - React 中为 `createElement` 函数，一般通过 JSX 语法 return 出去，通过 babel 直接转译
 - 严重依赖打包工具，需要构建过程进行转译语法。
+
+# DOM diff算法
+- 就是一个函数，称之为 `patch`
+- `patches = patch(oldVNode, newVNode)`
+- `patches` 就是要运行的 DOM 操作
+### 大概逻辑
+- Tree diff
+1. 新旧对比，找出哪些节点需要更新
+2. 如果节点是组件就看 `Component diff`
+3. 如果节点是标签就看 `Element diff`
+- Component diff
+1. 类型不同就直接替换（删除旧的）
+2. 类型相同则只更新属性
+3. 然后深入组件做 `Tree diff`
+- Element diff
+1. 标签名不同直接替换，相同则只更新属性
+2. 然后进入标签后代做 `Tree diff`（递归）
