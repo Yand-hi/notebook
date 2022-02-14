@@ -2,6 +2,8 @@
 
 通常用于移除 JS 文件上下文中未被引用的代码块
 
+原理：基于 esm 模块进行静态分析，通过 AST 将用不到的代码移除，从而减小打包体积。
+
 Vue2 中 `Vue.nextTick()` 这种全局 API 不支持 `Tree shaking` 无论是否使用过，都会包含在打包文件中；
 
 Vue3 中考虑支持 `Tree shaking`，全局 API 通过具名导出进行访问 `nextTick(() => {})`;
