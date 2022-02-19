@@ -33,5 +33,5 @@ optimization: {
 ```
 - 动态导入：通过函数调用导入模块
 ```js
-import()
+import(...)
 ```
