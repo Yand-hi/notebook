@@ -1,4 +1,5 @@
-### Array.prototype.reduceRight
+# Array.prototype.reduceRight
+
 ```js
 //  反转字符串
 
