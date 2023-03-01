@@ -17,5 +17,5 @@ let obj = {
 }
 
 observe(obj)
-obj.b;
+obj.b.p.q.j = 111;
 console.log(obj);

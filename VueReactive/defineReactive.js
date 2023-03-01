@@ -7,12 +7,13 @@ export function defineReactive(data, key, val = data[key]) {
     enumerable: true,
     configurable: true,
     get() {
-      console.log('getter !!!');
+      console.log('getter 你访问了' + key +'属性');
       return val;
     },
     set(newVal) {
       if (val !== newVal) {
-        console.log('setter !!!');
+        console.log('setter 你修改了' + key +'属性');
+        observe(newVal);
         val = newVal;
       }
     }
