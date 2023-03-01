@@ -1,13 +1,11 @@
-let obj = {
-  a: 1,
-  b: {
-    c: 2
-  },
-  d: 3
-}
+import { observe } from "./observe.js";
 
-function defineReactive(data, key, val = data[key]) {
+export function defineReactive(data, key, val = data[key]) {
+  observe(val),
+
   Object.defineProperty(data, key, {
+    enumerable: true,
+    configurable: true,
     get() {
       console.log('getter !!!');
       return val;
@@ -20,6 +18,3 @@ function defineReactive(data, key, val = data[key]) {
     }
   })
 }
-defineReactive(obj, 'a')
-obj.a = 1220;
-console.log(obj.a);
