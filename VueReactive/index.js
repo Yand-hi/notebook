@@ -1,4 +1,3 @@
-import { defineReactive } from "./defineReactive.js";
 import { observe } from "./observe.js";
 
 let obj = {
@@ -13,9 +12,10 @@ let obj = {
       }
     }
   },
-  c: 3
+  c: 3,
+  d: [1,2,3,4,5]
 }
 
 observe(obj)
-obj.b.p.q.j = 111;
+obj.d.push(1111);
 console.log(obj);
