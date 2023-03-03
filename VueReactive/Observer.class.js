@@ -13,7 +13,6 @@ export class Observer {
   }
   walk(value) {
     for (let k in value) {
-      console.log(k); 
       defineReactive(value, k);
     }
   }

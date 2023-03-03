@@ -15,7 +15,8 @@ const arrayChangedMethods = [
 arrayChangedMethods.forEach(method => {
   const original = arrayPrototype[method];
   def(arrayMethods, method, function() {
-    console.log(111);
+    original.apply(this, [...arguments]);
+    console.log(this);
   }, false)
 })
 

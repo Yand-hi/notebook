@@ -17,5 +17,5 @@ let obj = {
 }
 
 observe(obj)
-obj.d.push(1111);
+obj.d.push(1111, 2222);
 console.log(obj);
