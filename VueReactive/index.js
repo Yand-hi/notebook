@@ -13,9 +13,9 @@ let obj = {
     }
   },
   c: 3,
-  d: [1,2,3,4,5]
+  d: [1,2,3,4,{name: 'xxx'}]
 }
 
 observe(obj)
-obj.d.push(1111, 2222);
+obj.d.splice(1, 2);
 console.log(obj);
