@@ -15,7 +15,7 @@ const arrayChangedMethods = [
 arrayChangedMethods.forEach(method => {
   const original = arrayPrototype[method];
   def(arrayMethods, method, function() {
-    original.apply(this, [...arguments]);
+    const result = original.apply(this, [...arguments]);
     const {__ob__} = this;
     let inserts;
     switch (method) {
@@ -31,6 +31,7 @@ arrayChangedMethods.forEach(method => {
     if (inserts) {
       __ob__.observeArray(inserts);
     }
+    return result;
   }, false)
 })
 
