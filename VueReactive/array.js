@@ -16,7 +16,7 @@ arrayChangedMethods.forEach(method => {
   const original = arrayPrototype[method];
   def(arrayMethods, method, function() {
     const result = original.apply(this, [...arguments]);
-    const {__ob__} = this;
+    const {__ob__: ob} = this;
     let inserts;
     switch (method) {
       case 'push':
@@ -29,8 +29,9 @@ arrayChangedMethods.forEach(method => {
         break;
     }
     if (inserts) {
-      __ob__.observeArray(inserts);
+      ob.observeArray(inserts);
     }
+    ob.dep.notify();
     return result;
   }, false)
 })

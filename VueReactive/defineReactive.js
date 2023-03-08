@@ -1,7 +1,9 @@
+import { Dep } from "./dep.class.js";
 import { observe } from "./observe.js";
 
 export function defineReactive(data, key, val = data[key]) {
-  observe(val),
+  const dep = new Dep();
+  const childOb = observe(val);
 
   Object.defineProperty(data, key, {
     enumerable: true,
@@ -16,6 +18,8 @@ export function defineReactive(data, key, val = data[key]) {
         observe(newVal);
         val = newVal;
       }
+      console.log(data);
+      dep.notify();
     }
   })
 }
