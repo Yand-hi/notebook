@@ -8,5 +8,19 @@ function changeName(str) {
   return arr.join('')
 }
 
+function changeNameII(str) {
+  const temp = str.split('_');
+  let result = '';
+  temp.forEach((item, index) => {
+    if (index === 0) result += item;
+    else {
+      item = item[0].toUpperCase() + item.slice(1, item.length);
+      result += item;
+    } 
+  });
+  return result;
+}
+
 const r = changeName('first_name_second_name')
-console.log(r)
+const r2 = changeNameII('first_name_second_name')
+console.log(r, r2)
