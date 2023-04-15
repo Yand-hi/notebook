@@ -1,4 +1,4 @@
 .vscode
-.vitepress
+*deps
 
 node_modules

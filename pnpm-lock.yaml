@@ -1,10 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/node': ^18.15.11
   vitepress: 1.0.0-alpha.66
 
 dependencies:
-  vitepress: 1.0.0-alpha.66
+  vitepress: 1.0.0-alpha.66_@types+node@18.15.11
+
+devDependencies:
+  '@types/node': 18.15.11
 
 packages:
 
@@ -381,6 +385,9 @@ packages:
     dev: false
     optional: true
 
+  /@types/node/18.15.11:
+    resolution: {integrity: sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==}
+
   /@types/web-bluetooth/0.0.16:
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
     dev: false
@@ -392,7 +399,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.2.1
+      vite: 4.2.1_@types+node@18.15.11
       vue: 3.2.47
     dev: false
 
@@ -690,7 +697,7 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /vite/4.2.1:
+  /vite/4.2.1_@types+node@18.15.11:
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -715,6 +722,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.15.11
       esbuild: 0.17.16
       postcss: 8.4.21
       resolve: 1.22.3
@@ -723,7 +731,7 @@ packages:
       fsevents: 2.3.2
     dev: false
 
-  /vitepress/1.0.0-alpha.66:
+  /vitepress/1.0.0-alpha.66_@types+node@18.15.11:
     resolution: {integrity: sha512-p/qaXDuaxukCj61WDaw4npoHuvuPmh/MiRzgOrlz08MjkSemaVXj7KAIdXXdBKl9ebMoxYhuH9hKzqaXn9a3kg==}
     hasBin: true
     dependencies:
@@ -735,7 +743,7 @@ packages:
       body-scroll-lock: 4.0.0-beta.0
       minisearch: 6.0.1
       shiki: 0.14.1
-      vite: 4.2.1
+      vite: 4.2.1_@types+node@18.15.11
       vue: 3.2.47
     transitivePeerDependencies:
       - '@algolia/client-search'
