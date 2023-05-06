@@ -24,6 +24,21 @@ class EventEmitter {
   }
 
   /**
+   * 监听事件,只监听一次，之后销毁
+   * @param {string} eventName
+   * @param {requestCallback} callback
+   * @param {boolean|Object} [options = true]
+   * @param {Document|Element} [target = document]
+   */
+  $once(eventName, callback, options = true, target = document) {
+    const once_callback = (e) => {
+      callback(e);
+      target.removeEventListener(eventName, once_callback, options);
+    };
+    target.addEventListener(eventName, once_callback, options);
+  }
+
+  /**
    * 触发事件
    * @param {string} eventName
    * @param {any} detail
@@ -68,7 +83,7 @@ class EventEmitter {
     eventList.forEach(e => {
       e.target.removeEventListener(e.eventName, e.callback, e.options)
       const index = this.eventList.findIndex(event => event === e);
-      if(~index) this.eventList.splice(index, 1)
+      if (~index) this.eventList.splice(index, 1)
     })
   }
 }
