@@ -6,6 +6,7 @@ const ogTitle = 'Notebooks'
 const ogUrl = ''
 
 export default defineConfig({
+  base: '/blog',
   title: `Hello VitePress`,
   description: 'Just playing around.',
   head: [
