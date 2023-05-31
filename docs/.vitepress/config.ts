@@ -6,7 +6,13 @@ const ogTitle = 'Notebooks'
 const ogUrl = ''
 
 export default defineConfig({
-  base: '/blog/',
+  vite: {
+    server: {
+      host: 'localhost',
+      port: 8888,
+    }
+  },
+  base: '/blog',
   title: `Hello VitePress`,
   description: 'Just playing around.',
   head: [
@@ -43,9 +49,9 @@ export default defineConfig({
     ],
 
     algolia: {
-      appId: '7H67QR5P0A',
-      apiKey: 'deaab78bcdfe96b599497d25acc6460e',
-      indexName: 'vitejs',
+      appId: 'ACY4698UDH',
+      apiKey: '830efbe026a05eb3eab7e6a615663b6c',
+      indexName: 'blog',
       searchParameters: {
         facetFilters: ['tags:en'],
       },
