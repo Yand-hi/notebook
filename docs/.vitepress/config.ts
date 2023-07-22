@@ -109,7 +109,7 @@ export default defineConfig({
       ],
       '/Books 笔记/': [
         {
-          text: 'Books《Vuejs设计与实现》',
+          text: '《Vuejs设计与实现》',
           items: [
             {
               text: '1-框架设计概览',
@@ -131,10 +131,14 @@ export default defineConfig({
               text: '5-computed实现原理',
               link: '/Books 笔记/Vuejs设计与实现/5-computed实现原理',
             },
+            {
+              text: '6-watch的实现原理',
+              link: '/Books 笔记/Vuejs设计与实现/6-watch的实现原理',
+            },
           ],
         },
         {
-          text: 'C Prime Plus',
+          text: '《C Prime Plus》',
           items: [
             {
               text: '1-初识C语言',
